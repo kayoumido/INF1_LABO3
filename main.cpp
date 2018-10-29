@@ -65,6 +65,7 @@ int main() {
             error = true;
             continue;
          }
+         //Clean up the stream to avoid unintentional user entries
          cin.clear();
          
          // Check the first char of the given score
