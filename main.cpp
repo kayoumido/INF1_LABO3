@@ -7,6 +7,8 @@
  But         : Mettre en place un système de comptage de point pour le jeu de
                fléchette 501 double out.
  Remarque(s) : Les valeurs données par l'utilisateur ne sont pas fiable.
+               Dans le cas ou l'utilisatuer saisie une valeur tels que :
+                  20asdf, on garde le "20" et ignore le "asdf".
  Compilateur : MinGW-g++ <6.3.0>
  -----------------------------------------------------------------------------------
  */
@@ -66,8 +68,9 @@ int main() {
             error = true;
             continue;
          }
-         //Clean up the stream to avoid unintentional user entries
-         cin.clear();
+         // Clean up the stream to avoid unintentional user entries
+         // In the case where the user inputs a value like : D 20
+         //    we only take the first value and ignore the rest.
          cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
          
          // Check the first char of the given score
