@@ -67,6 +67,7 @@ int main() {
          }
          //Clean up the stream to avoid unintentional user entries
          cin.clear();
+         cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
          
          // Check the first char of the given score
          //    so we can determine which multiplier to use
