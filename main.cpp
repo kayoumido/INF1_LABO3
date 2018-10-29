@@ -65,6 +65,7 @@ int main() {
             error = true;
             continue;
          }
+         cin.clear();
          
          // Check the first char of the given score
          //    so we can determine which multiplier to use
